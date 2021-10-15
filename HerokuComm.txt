@@ -1,0 +1,21 @@
+heroku login
+
+cd my-project/
+git init
+heroku git:remote -a mayoreoco
+
+git add .
+git commit -am "make it better"
+git push heroku master
+
+*** Si falla, probar lo sig:
+npm cache clean --force
+
+echo 'node_modules' >> .gitignore
+git rm -r --cached node_modules
+git commit -am 'ignore node_modules'
+echo 'npm-debug.log' >> .gitignore
+git commit -am 'ignore npm-debug'
+
+#TicketHELP
+https://help.heroku.com/sharing/f336d6a8-1c97-47ff-a5c6-82fa27233e6b
